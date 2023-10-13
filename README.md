@@ -4,6 +4,7 @@
 
 This project is a comprehensive stock market order book simulator and microservice system designed to mimic stock market trading operations. It combines a C++ program for simulating stock orders with a Go-based microservice that handles asynchronous data processing and database operations. The system is containerized with Docker and deployable in a Kubernetes cluster for scalability and high availability.
 
+![System Architecture](https://github.com/kpp16/order-book-simulator/blob/main/order-book-sysdesign.png)
 
 ## Key Features
 
