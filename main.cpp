@@ -14,12 +14,19 @@ int main() {
     OrderBooks orderBooks;
     orderBooks.addOrderBook(orderBook);
 
-    std::string base_url = "http://192.168.49.2:31199";
+    const char* url_arg = "CLUSTER_URL";
+    const char* value = std::getenv(url_arg);
 
-    RESTApi *restAPI = new RESTApi(base_url);
+    if (value != nullptr) {
+        std::string base_url(value);
 
-    Server server(8080, orderBooks, restAPI);
-    server.accept_connections();
+        RESTApi *restAPI = new RESTApi(base_url);
+
+        Server server(8080, orderBooks, restAPI);
+        server.accept_connections();
+    }
+
+    std::cerr << "Cannot connect to the cluster URL\n";
 
     return 0;    
 }
