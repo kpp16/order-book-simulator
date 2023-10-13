@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3  # Number of replicas/instances you want to run
+  selector:
+    matchLabels:
+      app: dbo
+  template:
+    metadata:
+      labels:
+        app: dbo
+    spec:
+      containers:
+      - name: dbo
+        image: ghcr.io/kpp16/dbo:1.0  # Replace with your GitHub image path
+        ports:
+        - containerPort: 8080  # Port on which your app listens
+      imagePullSecrets:
+      - name: github-container-registry-secret  # Reference the secret created in step 1
+

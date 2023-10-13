@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dbo-service
+spec:
+  selector:
+    app: dbo
+  clusterIP: None
+  ports:
+  - protocol: TCP
+    port: 80  # The port you want to expose externally
+    targetPort: 8080  # The port your Go web application listens on in the pods
+  type: LoadBalancer
+
