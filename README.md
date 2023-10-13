@@ -48,12 +48,15 @@ cd stock-market-simulator
 cd DBOperationMicroservice/
 ```
 
-2. Build the Docker image for the Go microservice, specifying your desired image name (e.g., dbo-microservice):
+2. Make a `.env` file that has the PostgreSQL database connection variables like
+`DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD` and `DB_NAME`
+
+3. Build the Docker image for the Go microservice, specifying your desired image name (e.g., dbo-microservice):
 ```bash
 docker build -t dbo-microservice .
 ```
 
-3. You can host the docker image in docker desktop, ghcr, etc. Change the path in `orderbook-sim/DBOperationMicroservice/deployment.yaml` to reflect accordingly.
+4. You can host the docker image in docker desktop, ghcr, etc. Change the path in `orderbook-sim/DBOperationMicroservice/deployment.yaml` to reflect accordingly.
 
 ### Deploy in a Kubernetes Cluster
 
