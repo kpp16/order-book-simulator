@@ -93,9 +93,9 @@ nc localhost 8080
 ```JSON
 {
     "type": "order",
-    "ticker": "<string: stock ticker, e.g., AAPL>",
-    "price": double: bid/sell price, e.g., 156.54,
-    "quantity": double: quantitiy, e.g., 100,
+    "ticker": "<string>",
+    "price": <double>,
+    "quantity": <double>,
     "action": "buy/sell"
 }
 ```
